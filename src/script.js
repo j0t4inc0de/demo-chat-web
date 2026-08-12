@@ -104,12 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
         chatAvatar.innerHTML = avatars[config.avatar_type] || avatars.dog;
 
         // 4. Cargar primer mensaje de bienvenida
-        chatBody.innerHTML = `
-            <div class="message received">
-                <div class="message-content">${config.flow.welcome}</div>
-                <div class="message-time">${getFormattedTime()}</div>
-            </div>
-        `;
+        appendMessage(config.flow.welcome);
 
         // 5. Ocultar pantalla de carga e iniciar
         loadingScreen.style.display = "none";
@@ -118,13 +113,24 @@ document.addEventListener("DOMContentLoaded", () => {
         startFlow();
     }
 
-    // Agregar mensaje al historial
+    // Helper para parsear markdown básico (negritas y saltos de línea)
+    function parseMarkdown(text) {
+        if (!text) return "";
+        let html = text.replace(/\n/g, "<br>");
+        // Reemplazar **negrita** por <strong>negrita</strong>
+        html = html.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
+        // Reemplazar *cursiva* por <em>cursiva</em>
+        html = html.replace(/\*(.*?)\*/g, "<em>$1</em>");
+        return html;
+    }
+
+    // Agregar burbuja de mensaje
     function appendMessage(text, isSent = false) {
         const msgDiv = document.createElement("div");
         msgDiv.className = `message ${isSent ? 'sent' : 'received'}`;
         
         msgDiv.innerHTML = `
-            <div class="message-content">${text}</div>
+            <div class="message-content">${parseMarkdown(text)}</div>
             <div class="message-time">${getFormattedTime()}</div>
         `;
         
