@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  demo-chat-web:
+    container_name: demo-chat-web
+    build: .
+    restart: unless-stopped
+    ports:
+      - "8080:80" # Expone puerto 8080 para testeo local si es necesario
+    networks:
+      - proxy_network
+
+networks:
+  proxy_network:
+    external: true

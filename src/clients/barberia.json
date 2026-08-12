@@ -1,0 +1,46 @@
+{
+    "client_id": "barberia",
+    "name": "Talento Urbano 💈",
+    "status": "Bot de Agendamiento 24/7",
+    "avatar_type": "barber",
+    "theme_color": "#1B2A47",
+    "theme_color_dark": "#0B1528",
+    "theme_color_light": "#E3E9F3",
+    "sidebar": {
+        "title": "Samod Barber Booking",
+        "subtitle": "Propuesta de automatización para Barbería Talento Urbano",
+        "problem_title": "El Problema",
+        "problem_desc": "Los barberos cortan cabello todo el día y no pueden responder mensajes de Instagram o WhatsApp para agendar, perdiendo clientes que no encuentran hora disponible de inmediato.",
+        "solution_title": "La Solución",
+        "solution_desc": "Un asistente de IA en el WhatsApp de la barbería que guíe al cliente, muestre los horarios disponibles, permita reservar y envíe un recordatorio automático 2 horas antes de la cita.",
+        "profit_title": "Rentabilidad",
+        "profit_desc": "Evita el tiempo muerto y los 'no-show' con confirmación inmediata y recordatorios de asistencia por mensaje."
+    },
+    "prices": {
+        "Adulto": { "completa": 10000, "baño": 7000 },
+        "Niño": { "completa": 8000, "baño": 5000 },
+        "Corte + Barba": { "completa": 14000, "baño": 10000 }
+    },
+    "flow": {
+        "welcome": "¡Hola! 💈 Bienvenido a Barbería **Talento Urbano**.<br><br>Los barberos están cortando cabello en este momento ✂️, pero yo puedo ayudarte a cotizar y reservar tu hora de inmediato.<br><br>¿Para quién es el servicio?",
+        "step_1_options": [
+            { "label": "🧔 Adulto", "value": "Adulto" },
+            { "label": "👦 Niño", "value": "Niño" },
+            { "label": "🔥 Corte + Barba", "value": "Corte + Barba" }
+        ],
+        "step_2_message": "¡Perfecto! Para el servicio de **{size}**, tenemos estas opciones principales:\n\n1. ✂️ **Servicio Completo (${price_completa} CLP)**: Corte de cabello asesorado, lavado, peinado con pomada y perfilado de patillas.\n2. 💈 **Servicio Express (${price_bano} CLP)**: Solo corte de cabello rápido o mantención básica.\n\n¿Qué te gustaría agendar?",
+        "step_2_options": [
+            { "label": "Servicio Completo", "value": "Servicio Completo", "price_type": "completa" },
+            { "label": "Servicio Express", "value": "Servicio Express", "price_type": "baño" }
+        ],
+        "step_3_message": "Excelente. Tenemos sillones disponibles para mañana **Viernes** en nuestra sucursal del centro.\n\n¿Qué horario te acomoda más?",
+        "step_3_options": [
+            { "label": "🕥 11:30 AM", "value": "11:30 AM" },
+            { "label": "🕒 16:00 PM", "value": "16:00 PM" },
+            { "label": "🕠 19:00 PM", "value": "19:00 PM" }
+        ],
+        "step_4_message": "¡Casi listo! Para finalizar la reserva, por favor escribe abajo tu **nombre completo** y presiona Enviar. 👇",
+        "step_4_placeholder": "Escribe tu nombre...",
+        "step_5_message": "🎉 **¡Cita Reservada con Éxito!** 🎉\n\n🧔 **Cliente:** {input} ({size})\n💇 **Servicio:** {service}\n📅 **Fecha:** Viernes (Mañana)\n⏰ **Hora:** {time}\n💵 **Valor Estimado:** ${price} CLP\n📍 **Lugar:** Calle Condell 456, Centro Villa Alemana.\n\n¡Te esperamos! Te enviamos un recordatorio automático a tu WhatsApp 2 horas antes de tu cita. 💈✂️"
+    }
+}

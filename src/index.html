@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cargando Simulador... | We Are Samod</title>
+    <!-- Fuente premium Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Pantalla de Carga Inicial -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="spinner"></div>
+        <p>Cargando propuesta interactiva...</p>
+    </div>
+
+    <div class="app-container" id="app-container" style="display: none;">
+        
+        <!-- Panel de Pitch Lateral (Visible en desktop) -->
+        <div class="pitch-sidebar">
+            <div class="brand-header">
+                <span class="brand-tag">We Are Samod 🇨🇱</span>
+                <h1 id="sidebar-title">Cargando...</h1>
+                <p class="subtitle" id="sidebar-subtitle">Cargando...</p>
+            </div>
+            
+            <div class="pitch-content">
+                <div class="card">
+                    <h3>
+                        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="8" x2="12" y2="12"></line>
+                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                        </svg>
+                        <span id="problem-title">El Problema</span>
+                    </h3>
+                    <p id="problem-desc">Cargando...</p>
+                </div>
+                
+                <div class="card">
+                    <h3>
+                        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"></path>
+                        </svg>
+                        <span id="solution-title">La Solución</span>
+                    </h3>
+                    <p id="solution-desc">Cargando...</p>
+                </div>
+                
+                <div class="card highlight">
+                    <h3>
+                        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                            <polyline points="17 6 23 6 23 12"></polyline>
+                        </svg>
+                        <span id="profit-title">Rentabilidad</span>
+                    </h3>
+                    <p id="profit-desc">Cargando...</p>
+                </div>
+            </div>
+            
+            <div class="pitch-footer">
+                <p>
+                    Prueba el simulador de la derecha como si fueras un cliente agendando una cita.
+                    <svg class="footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <polyline points="19 12 12 19 5 12"></polyline>
+                    </svg>
+                </p>
+            </div>
+        </div>
+
+        <!-- Módulo del Teléfono Movil (Simulador de WhatsApp) -->
+        <div class="phone-mockup">
+            <div class="phone-screen">
+                
+                <!-- Cabecera de WhatsApp -->
+                <div class="chat-header">
+                    <div class="back-btn">&#8592;</div>
+                    <div class="avatar" id="chat-avatar">
+                        <!-- Se inyecta por JS (Grooming o Barbería) -->
+                    </div>
+                    <div class="contact-info">
+                        <span class="contact-name" id="contact-name">Cargando...</span>
+                        <span class="contact-status" id="contact-status">Cargando...</span>
+                    </div>
+                </div>
+
+                <!-- Ventana de Mensajes -->
+                <div class="chat-body" id="chat-body">
+                    <!-- Los mensajes se cargarán dinámicamente -->
+                </div>
+
+                <!-- Panel de Respuestas Rápidas (Interactivo) -->
+                <div class="quick-replies-container" id="quick-replies">
+                    <!-- Los botones se insertarán dinámicamente con JS -->
+                </div>
+
+                <!-- Input de Escritura de WhatsApp -->
+                <div class="chat-input-area">
+                    <input type="text" id="chat-input" placeholder="Escribe un mensaje..." disabled>
+                    <button id="send-btn" disabled>
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.01 21L23 12L2.01 3L2 10L17 12L2 14L2.01 21Z" fill="#128C7E"/>
+                        </svg>
+                    </button>
+                </div>
+                
+            </div>
+        </div>
+
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

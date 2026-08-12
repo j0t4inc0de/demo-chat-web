@@ -1,0 +1,46 @@
+{
+    "client_id": "huellitas_felices",
+    "name": "Huellitas Felices 🐾",
+    "status": "Asistente Virtual 24/7",
+    "avatar_type": "dog",
+    "theme_color": "#128C7E",
+    "theme_color_dark": "#075E54",
+    "theme_color_light": "#DCF8C6",
+    "sidebar": {
+        "title": "Demo Agente Inteligente",
+        "subtitle": "Propuesta de automatización para Huellitas Felices v.a",
+        "problem_title": "El Problema",
+        "problem_desc": "Mientras bañas o cortas el pelo a un perrito, no puedes contestar el teléfono. Si un cliente tarda horas en recibir respuesta, termina agendando en otra peluquería.",
+        "solution_title": "La Solución",
+        "solution_desc": "Un asistente de IA en tu WhatsApp que atiende al instante, cotiza según el tamaño del perro, muestra las horas libres y agenda directamente en tu calendario.",
+        "profit_title": "Rentabilidad",
+        "profit_desc": "Recuperando solo 1 cliente al mes, el sistema ya se pagó solo. Los demás son ganancia directa para ti."
+    },
+    "prices": {
+        "Pequeño": { "completa": 18000, "baño": 12000 },
+        "Mediano": { "completa": 22000, "baño": 15000 },
+        "Grande": { "completa": 28000, "baño": 20000 }
+    },
+    "flow": {
+        "welcome": "¡Hola! 🐶 Bienvenido a Peluquería Canina **Huellitas Felices v.a**.<br><br>Rhony está ocupado embelleciendo a una mascota en este momento ✂️, pero yo puedo ayudarte a cotizar y agendar tu cita de inmediato de forma automática.<br><br>¿De qué tamaño es tu perrito?",
+        "step_1_options": [
+            { "label": "🐶 Pequeño (Poodle, Yorky, etc.)", "value": "Pequeño" },
+            { "label": "🦮 Mediano (Cocker, Beagle, etc.)", "value": "Mediano" },
+            { "label": "🐕 Grande (Golden, Pastor, etc.)", "value": "Grande" }
+        ],
+        "step_2_message": "¡Perfecto! Para perritos de tamaño **{size}**, tenemos estas opciones principales:\n\n1. ✂️ **Peluquería Completa (${price_completa} CLP)**: Baño Hydra/PSH, corte higiénico y estético, secado sin estrés y corte de uñas.\n2. 💧 **Solo Baño y Secado (${price_bano} CLP)**: Lavado premium, secado y cepillado.\n\n¿Qué tipo de servicio necesitas?",
+        "step_2_options": [
+            { "label": "Peluquería Completa", "value": "Peluquería Completa", "price_type": "completa" },
+            { "label": "Solo Baño y Secado", "value": "Solo Baño y Secado", "price_type": "baño" }
+        ],
+        "step_3_message": "Excelente. Tenemos horas disponibles para este **Jueves** en nuestra sucursal de Peñablanca (Av. Vicepresidente Bernardo Leighton 254).\n\n¿Qué horario te acomoda más?",
+        "step_3_options": [
+            { "label": "🕥 10:30 AM", "value": "10:30 AM" },
+            { "label": "🕒 15:00 PM", "value": "15:00 PM" },
+            { "label": "🕠 17:30 PM", "value": "17:30 PM" }
+        ],
+        "step_4_message": "¡Casi listo! Para finalizar la reserva, por favor escribe abajo el **nombre de tu mascota** y presiona Enviar. 👇",
+        "step_4_placeholder": "Escribe el nombre de tu perrito...",
+        "step_5_message": "🎉 **¡Cita Agendada con Éxito!** 🎉\n\n🐾 **Mascota:** {input} ({size})\n💇 **Servicio:** {service}\n📅 **Fecha:** Jueves (Mañana)\n⏰ **Hora:** {time}\n💵 **Valor Estimado:** ${price} CLP\n📍 **Lugar:** Av. Vicepresidente Bernardo Leighton 254, Peñablanca.\n\nRhony los recibirá mañana con mucho cariño. Le enviamos una notificación a su WhatsApp para coordinar los detalles. ¡Nos vemos! 🐶✂️"
+    }
+}
