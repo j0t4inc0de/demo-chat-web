@@ -1,0 +1,46 @@
+{
+  "client_id": "bluemoonpet",
+  "name": "BlueMoon Pet",
+  "status": "Peluqueria Canina y Felina en Los Angeles",
+  "avatar_type": "dog",
+  "theme_color": "#2F80ED",
+  "theme_color_dark": "#174EA6",
+  "theme_color_light": "#DCEBFF",
+  "sidebar": {
+    "title": "Samod Pet Booking",
+    "subtitle": "Propuesta de automatizacion para BlueMoon Pet",
+    "problem_title": "El Problema",
+    "problem_desc": "BlueMoon Pet atiende en horarios acotados y muchos clientes preguntan por disponibilidad, precios y servicios por WhatsApp mientras el equipo esta banando, secando o cortando el pelo de una mascota.",
+    "solution_title": "La Solucion",
+    "solution_desc": "Un asistente de WhatsApp responde al instante, cotiza segun tamano y servicio, muestra horarios disponibles y deja la solicitud de agenda lista para confirmar.",
+    "profit_title": "Rentabilidad",
+    "profit_desc": "Recupera consultas fuera de horario, reduce mensajes repetidos y ayuda a llenar cupos de peluqueria con reservas mas ordenadas."
+  },
+  "prices": {
+    "Pequeno": { "completa": 25000, "baño": 18000 },
+    "Mediano": { "completa": 32000, "baño": 24000 },
+    "Grande": { "completa": 42000, "baño": 32000 }
+  },
+  "flow": {
+    "welcome": "Hola! Bienvenido a **BlueMoon Pet**.\n\nSomos peluqueria canina y felina en **Av. Alemania 493, Los Angeles**. Puedo ayudarte a cotizar y solicitar una hora para tu mascota.\n\nPara empezar, dime el tamano de tu mascota:",
+    "step_1_options": [
+      { "label": "Perro pequeno", "value": "Pequeno" },
+      { "label": "Perro mediano", "value": "Mediano" },
+      { "label": "Perro grande", "value": "Grande" }
+    ],
+    "step_2_message": "Perfecto. Para mascota **{size}**, estas son las opciones principales:\n\n1. **Servicio completo (${price_completa} CLP)**: bano, secado, corte estetico, corte de unas y limpieza basica.\n2. **Bano y mantencion (${price_baño} CLP)**: bano, secado, cepillado y perfume.\n\nQue servicio te gustaria solicitar?",
+    "step_2_options": [
+      { "label": "Servicio completo", "value": "Servicio completo", "price_type": "completa" },
+      { "label": "Bano y mantencion", "value": "Bano y mantencion", "price_type": "baño" }
+    ],
+    "step_3_message": "Genial. Atendemos de **lunes a viernes de 15:00 a 18:00** y sabados de **09:30 a 13:30**.\n\nQue horario te acomoda mas?",
+    "step_3_options": [
+      { "label": "Lun 15:30", "value": "Lunes 15:30" },
+      { "label": "Mie 16:30", "value": "Miercoles 16:30" },
+      { "label": "Sab 10:30", "value": "Sabado 10:30" }
+    ],
+    "step_4_message": "Casi listo. Escribe tu **nombre**, el **nombre de tu mascota** y un telefono de contacto para dejar la solicitud preparada.",
+    "step_4_placeholder": "Ej: Camila, Luna, +56 9...",
+    "step_5_message": "**Solicitud recibida para BlueMoon Pet**\n\n**Datos:** {input}\n**Mascota:** {size}\n**Servicio:** {service}\n**Horario solicitado:** {time}\n**Valor estimado:** ${price} CLP\n**Direccion:** Av. Alemania 493, Los Angeles\n\nTe contactaremos por WhatsApp para confirmar disponibilidad. Tambien puedes escribir directo al **+56 9 9879 4248**."
+  }
+}
