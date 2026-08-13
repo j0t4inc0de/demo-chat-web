@@ -1,0 +1,46 @@
+{
+    "client_id": "camiperruquera",
+    "name": "Cami Perruquera 🐕",
+    "status": "Asistente Virtual 24/7",
+    "avatar_type": "dog",
+    "theme_color": "#8E7C68",
+    "theme_color_dark": "#635546",
+    "theme_color_light": "#F5F2EE",
+    "sidebar": {
+        "title": "Caso Cami Perruquera",
+        "subtitle": "Agendamiento para atención 1 a 1 sin estrés",
+        "problem_title": "El Problema",
+        "problem_desc": "Al dar una atención 1 a 1 sin estrés y sin caniles, tu prioridad número uno es el perrito que estás atendiendo. No puedes dejarlo solo para contestar WhatsApp, lo que causa demoras en las respuestas y pérdida de reservas.",
+        "solution_title": "La Solución",
+        "solution_desc": "Un bot en tu WhatsApp que atiende al cliente de inmediato, agenda su hora en tu calendario según tu disponibilidad y le confirma su reserva, permitiéndote enfocarte 100% en la mascota.",
+        "profit_title": "Rentabilidad",
+        "profit_desc": "Protege la experiencia sin estrés de tus clientes caninos sin descuidar la velocidad de tu agenda de negocios."
+    },
+    "prices": {
+        "Pequeño": { "completa": 16000, "baño": 10000 },
+        "Mediano": { "completa": 20000, "baño": 13000 },
+        "Grande": { "completa": 26000, "baño": 17000 }
+    },
+    "flow": {
+        "welcome": "¡Hola! 🐾 Bienvenido al asistente virtual de **Cami Perruquera**.\n\nComo doy una atención 1 a 1 sin estrés ni caniles, en este momento estoy enfocada 100% en un perrito ✂️. Sin embargo, yo puedo ayudarte a cotizar y reservar tu hora en 30 segundos.\n\n¿De qué tamaño es tu mascota?",
+        "step_1_options": [
+            { "label": "🐶 Pequeño (Yorky, Poodle, etc.)", "value": "Pequeño" },
+            { "label": "🦮 Mediano (Cocker, Beagle, etc.)", "value": "Mediano" },
+            { "label": "🐕 Grande (Golden, Labrador, etc.)", "value": "Grande" }
+        ],
+        "step_2_message": "¡Excelente! Para perritos de tamaño **{size}**, estos son los valores estimados:\n\n1. ✂️ **Peluquería Completa (${price_completa} CLP)**: Baño premium, corte de estética, secado sin estrés y corte de uñas.\n2. 💧 **Solo Baño y Cepillado (${price_bano} CLP)**: Lavado, secado y cepillado.\n\n¿Qué servicio te gustaría reservar?",
+        "step_2_options": [
+            { "label": "Peluquería Completa", "value": "Peluquería Completa", "price_type": "completa" },
+            { "label": "Solo Baño y Secado", "value": "Solo Baño y Secado", "price_type": "baño" }
+        ],
+        "step_3_message": "Genial. Tengo estas horas disponibles para esta semana en Villa Alemana:\n\n¿Cuál te acomoda más?",
+        "step_3_options": [
+            { "label": "🕥 10:00 AM", "value": "10:00 AM" },
+            { "label": "🕒 15:30 PM", "value": "15:30 PM" },
+            { "label": "🕠 17:30 PM", "value": "17:30 PM" }
+        ],
+        "step_4_message": "Perfecto. Por último, escribe el **nombre de tu mascota** para confirmar tu reserva de atención 1 a 1. 👇",
+        "step_4_placeholder": "Escribe el nombre de tu mascota...",
+        "step_5_message": "🎉 **¡Cita Reservada con Éxito!** 🎉\n\n🐾 **Mascota:** {input} ({size})\n💇 **Servicio:** {service}\n📅 **Fecha:** Esta Semana\n⏰ **Hora:** {time}\n💵 **Valor Base:** ${price} CLP\n📍 **Lugar:** Villa Alemana (Dirección exacta al confirmar).\n\n¡Cami recibirá a {input} con mucho cariño! 🐾"
+    }
+}
