@@ -1,0 +1,46 @@
+{
+    "client_id": "garritaspets",
+    "name": "Garritas Pets 🐾🛍️",
+    "status": "Asistente Virtual 24/7",
+    "avatar_type": "dog",
+    "theme_color": "#D81B60",
+    "theme_color_dark": "#880E4F",
+    "theme_color_light": "#FCE4EC",
+    "sidebar": {
+        "title": "Caso Garritas Pets",
+        "subtitle": "Agendamiento sin interrupciones para tiendas y peluquerías",
+        "problem_title": "El Problema",
+        "problem_desc": "Al combinar una tienda (Pet Shop + Farmacia) con peluquería canina presencial en Peñablanca, es difícil para el personal atender a los clientes en el local físico y responder rápido en WhatsApp para dar horas de servicio.",
+        "solution_title": "La Solución",
+        "solution_desc": "Un bot en tu WhatsApp que atiende a tus clientes de inmediato, cotiza el baño o peluquería según el tamaño de la mascota y agenda la cita automáticamente en tu calendario.",
+        "profit_title": "Rentabilidad",
+        "profit_desc": "No descuides las ventas presenciales de tu tienda por responder WhatsApp, y asegura que tu peluquería esté siempre llena con reservas automáticas."
+    },
+    "prices": {
+        "Pequeño": { "completa": 15000, "baño": 10000 },
+        "Mediano": { "completa": 20000, "baño": 14000 },
+        "Grande": { "completa": 27000, "baño": 20000 }
+    },
+    "flow": {
+        "welcome": "¡Hola! 🐾 Bienvenido a **Garritas Pets (Peñablanca)**.\n\nEn este chat te ayudaré a cotizar y agendar la hora de peluquería para tu mascota en solo 30 segundos, sin esperas.\n\n¿De qué tamaño es tu perrito?",
+        "step_1_options": [
+            { "label": "🐶 Pequeño (Yorky, Poodle, Maltés, etc.)", "value": "Pequeño" },
+            { "label": "🦮 Mediano (Cocker, Schnauzer, etc.)", "value": "Mediano" },
+            { "label": "🐕 Grande (Golden, Labrador, etc.)", "value": "Grande" }
+        ],
+        "step_2_message": "¡Excelente! Para perritos de tamaño **{size}**, el valor base del servicio completo (baño premium, corte de pelo, secado, oídos y corte de uñas) es de **${price_completa} CLP**.\n\n¿Qué servicio te gustaría reservar hoy?",
+        "step_2_options": [
+            { "label": "Peluquería Completa", "value": "Peluquería Completa", "price_type": "completa" },
+            { "label": "Solo Baño y Secado", "value": "Solo Baño y Secado", "price_type": "baño" }
+        ],
+        "step_3_message": "Perfecto. Tenemos estas horas disponibles para peluquería esta semana en Manuel Montt 743 (Peñablanca):\n\n¿Cuál te acomoda?",
+        "step_3_options": [
+            { "label": "🕤 09:30 AM", "value": "09:30 AM" },
+            { "label": "🕑 14:00 PM", "value": "14:00 PM" },
+            { "label": "🕔 17:00 PM", "value": "17:00 PM" }
+        ],
+        "step_4_message": "Estupendo. Para finalizar la reserva, por favor escribe el **nombre y raza** de tu perrito. 👇",
+        "step_4_placeholder": "Ej: Rocky - Poodle...",
+        "step_5_message": "🎉 **¡Cita Agendada con Éxito!** 🎉\n\n🐾 **Mascota:** {input} ({size})\n✂️ **Servicio:** {service}\n⏰ **Hora:** {time}\n💵 **Valor Estimado:** ${price} CLP\n📍 **Lugar:** Manuel Montt 743, Peñablanca (Garritas Pets).\n\n¡Los esperamos para consentir a su mascota! 🐶🐱💕"
+    }
+}
