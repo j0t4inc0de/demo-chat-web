@@ -1,0 +1,45 @@
+{
+    "client_id": "nicomundomascotas",
+    "name": "Veterinaria Nico 🐾🏥",
+    "status": "Asistente Médico Virtual",
+    "avatar_type": "dog",
+    "theme_color": "#0288D1",
+    "theme_color_dark": "#01579B",
+    "theme_color_light": "#E1F5FE",
+    "sidebar": {
+        "title": "Caso Nico Mundomascotas",
+        "subtitle": "Agendamiento clínico automático en La Cisterna",
+        "problem_title": "El Problema",
+        "problem_desc": "El mesón de recepción de una clínica veterinaria suele colapsar entre atender pacientes presenciales, cobrar y responder WhatsApps repetitivos sobre precios y horas disponibles de consultas o ecografías.",
+        "solution_title": "La Solución",
+        "solution_desc": "Un Asistente Médico Virtual en WhatsApp que califica el servicio solicitado (consulta, exámenes, etc.), cotiza y agenda la hora en el calendario de cada especialista de inmediato.",
+        "profit_title": "Rentabilidad",
+        "profit_desc": "Libera al personal de recepción para atender mejor en el local y asegura que cada consulta o examen se agende al instante, 24/7."
+    },
+    "prices": {
+        "Consulta Veterinaria General": { "completa": 18000, "baño": 18000 },
+        "Examen (Eco, Ecografía, Lab)": { "completa": 35000, "baño": 35000 },
+        "Peluquería o Estética Canina": { "completa": 18000, "baño": 12000 }
+    },
+    "flow": {
+        "welcome": "¡Hola! 🐾 Bienvenido al **Asistente Clínico de Nico Mundomascotas (La Cisterna)**.\n\nPara ayudarte de inmediato, por favor selecciona el servicio que necesitas agendar hoy:\n\n*(Nota: Si es una urgencia médica grave, por favor escríbelo directamente para derivarte con un veterinario de turno)*",
+        "step_1_options": [
+            { "label": "🩺 Consulta Veterinaria General", "value": "Consulta Veterinaria General" },
+            { "label": "📸 Examen (Eco, Radiografía, Lab)", "value": "Examen (Eco, Ecografía, Lab)" },
+            { "label": "✂️ Peluquería o Estética Canina", "value": "Peluquería o Estética Canina" }
+        ],
+        "step_2_message": "¡Excelente! Has seleccionado **{size}**.\n\nEl valor estimado para este servicio es de **${price_completa} CLP**.\n\n¿Deseas confirmar la reserva de este servicio clínico?",
+        "step_2_options": [
+            { "label": "Confirmar y Elegir Horario", "value": "Confirmar y Elegir Horario", "price_type": "completa" }
+        ],
+        "step_3_message": "Perfecto. Estos son los horarios disponibles para consulta y exámenes clínicos en Paulina 8053 (La Cisterna) esta semana:\n\n¿Cuál prefieres?",
+        "step_3_options": [
+            { "label": "🕥 10:30 AM", "value": "10:00 AM" },
+            { "label": "🕒 15:00 PM", "value": "15:00 PM" },
+            { "label": "🕡 18:30 PM", "value": "18:30 PM" }
+        ],
+        "step_4_message": "Estupendo. Escribe el **nombre de tu mascota** y la **especie** (perro/gato) para completar la ficha clínica provisional. 👇",
+        "step_4_placeholder": "Ej: Rocky - Perro (Mestizo)...",
+        "step_5_message": "🎉 **¡Cita Clínica Confirmada!** 🎉\n\n🐾 **Paciente:** {input}\n🩺 **Servicio:** {service}\n⏰ **Hora:** {time}\n💵 **Valor:** ${price} CLP\n📍 **Lugar:** Paulina 8053, La Cisterna (Veterinaria Nico Mundomascotas).\n\n¡Los esperamos! Por favor llega 10 minutos antes de la hora médica. 🏥🐾"
+    }
+}
