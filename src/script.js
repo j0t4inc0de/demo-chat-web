@@ -277,7 +277,35 @@ document.addEventListener("DOMContentLoaded", () => {
             
             const finalConfirm = formatText(config.flow.step_5_message, vars);
             appendMessage(finalConfirm);
+
+            // Mostrar botón para reiniciar la simulación después de un segundo
+            setTimeout(() => {
+                renderQuickReplies([
+                    {
+                        label: "🔄 Probar simulación de nuevo",
+                        action: () => resetSimulator()
+                    }
+                ]);
+            }, 1000);
         }, 2000);
+    }
+
+    // Reiniciar todo el simulador a su estado original
+    function resetSimulator() {
+        bookingState = {
+            size: "",
+            price: 0,
+            service: "",
+            time: "",
+            userInput: ""
+        };
+        chatBody.innerHTML = "";
+        appendMessage(config.flow.welcome);
+        chatInput.value = "";
+        chatInput.setAttribute("disabled", "true");
+        chatInput.placeholder = "Escribe un mensaje...";
+        sendBtn.setAttribute("disabled", "true");
+        startFlow();
     }
 
     // Eventos
