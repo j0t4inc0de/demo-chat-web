@@ -1,0 +1,45 @@
+{
+    "client_id": "peluditoss",
+    "name": "PeluDitos's 🐕🚐",
+    "status": "Asistente de Agendamiento",
+    "avatar_type": "dog",
+    "theme_color": "#00BCD4",
+    "theme_color_dark": "#0097A7",
+    "theme_color_light": "#E0F7FA",
+    "sidebar": {
+        "title": "Caso PeluDitos's",
+        "subtitle": "Agendamiento integrado con servicio de traslado",
+        "problem_title": "El Problema",
+        "problem_desc": "Al ofrecer un servicio de traslado (pet taxi) en Villa Alemana, coordinar las horas de peluquería canina y compatibilizarlas con las rutas de retiro y entrega del vehículo se vuelve una pesadilla logística que consume horas en WhatsApp.",
+        "solution_title": "La Solución",
+        "solution_desc": "Un bot en tu WhatsApp que califica el tamaño, le pregunta al cliente si necesita traslado, recolecta sus datos de dirección y agenda la cita, facilitando la planificación de tus rutas de transporte.",
+        "profit_title": "Rentabilidad",
+        "profit_desc": "Reduce el tiempo de coordinación de transporte en un 90% y concreta más servicios de traslado premium de forma automática."
+    },
+    "prices": {
+        "con traslado a domicilio": { "completa": 20000, "baño": 15000 },
+        "yo lo llevo al local": { "completa": 16000, "baño": 11000 }
+    },
+    "flow": {
+        "welcome": "¡Hola! 🐶 Bienvenido a **PeluDitos's Villa Alemana**.\n\nTe ayudaré a cotizar y agendar la hora de tu perrito en 30 segundos. Además, si lo necesitas, podemos incluir nuestro **Servicio de Traslado** 🚐.\n\n¿De qué tamaño es tu perrito?",
+        "step_1_options": [
+            { "label": "🐶 Pequeño (Yorky, Poodle, Maltés, etc.)", "value": "Pequeño" },
+            { "label": "🦮 Mediano (Cocker, Beagle, Schnauzer)", "value": "Mediano" },
+            { "label": "🐕 Grande (Golden, Labrador, etc.)", "value": "Grande" }
+        ],
+        "step_2_message": "¡Excelente! Para perritos de tamaño **{size}**, ¿necesitas agregar nuestro **Servicio de Traslado** 🚐 (retiramos y entregamos a tu mascota a domicilio)?",
+        "step_2_options": [
+            { "label": "🚐 Sí, con traslado a domicilio", "value": "con traslado a domicilio", "price_type": "completa" },
+            { "label": "🚶 No, yo lo llevo al local", "value": "yo lo llevo al local", "price_type": "completa" }
+        ],
+        "step_3_message": "Perfecto. Tenemos estas horas de peluquería disponibles para esta semana en Av. Valparaíso 1277:\n\n¿Cuál te acomoda?",
+        "step_3_options": [
+            { "label": "🕥 10:00 AM", "value": "10:00 AM" },
+            { "label": "🕒 13:30 PM", "value": "13:30 PM" },
+            { "label": "🕡 16:30 PM", "value": "16:30 PM" }
+        ],
+        "step_4_message": "Estupendo. Escribe el **nombre de tu mascota** y la **dirección de retiro** (si solicitaste traslado) para finalizar tu reserva. 👇",
+        "step_4_placeholder": "Ej: Max - Calle Latorre 456 (Peñablanca)...",
+        "step_5_message": "🎉 **¡Cita Confirmada con Éxito!** 🎉\n\n🐾 **Mascota:** {size}\n✂️ **Servicio:** Peluquería Completa\n🚐 **Modalidad:** {service}\n⏰ **Hora:** {time}\n💵 **Valor Estimado:** ${price} CLP (Traslado incluido si aplica)\n📍 **Lugar:** Av. Valparaíso 1277, Villa Alemana / Detalles: {input}\n\n¡Cuidaremos a tu mascota con mucho cariño! 🐶👑🚐"
+    }
+}
