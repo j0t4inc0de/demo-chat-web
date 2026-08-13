@@ -1,0 +1,46 @@
+{
+    "client_id": "renapgroomer",
+    "name": "Rena PGroomer 🚙🐾",
+    "status": "Asistente Virtual (A domicilio)",
+    "avatar_type": "dog",
+    "theme_color": "#008080",
+    "theme_color_dark": "#004D40",
+    "theme_color_light": "#E0F2F1",
+    "sidebar": {
+        "title": "Caso Renato PGroomer",
+        "subtitle": "Agendamiento inteligente para peluquería a domicilio",
+        "problem_title": "El Problema",
+        "problem_desc": "Al hacer peluquería a domicilio, pasas el día manejando entre comunas de la V Región y atendiendo en terreno. No puedes responder WhatsApp mientras conduces o bañas a la mascota, lo que demora las reservas.",
+        "solution_title": "La Solución",
+        "solution_desc": "Un bot en tu WhatsApp que atiende a tus clientes 24/7, cotiza según el tamaño y agenda la cita a domicilio en tu calendario para que solo te preocupes de tu ruta.",
+        "profit_title": "Rentabilidad",
+        "profit_desc": "Automatiza tu agenda logística. Menos tiempo respondiendo en la ruta = más perritos atendidos al día."
+    },
+    "prices": {
+        "Pequeño": { "completa": 18000, "baño": 12000 },
+        "Mediano": { "completa": 23000, "baño": 16000 },
+        "Grande": { "completa": 30000, "baño": 22000 }
+    },
+    "flow": {
+        "welcome": "¡Hola! 🐾 Bienvenido al asistente de **Renato PGroomer (Peluquería a Domicilio)**.\n\nComo paso el día en ruta atendiendo perritos en terreno 🚙, a veces demoro en responder. Sin embargo, yo puedo ayudarte a cotizar y agendar tu visita a domicilio de inmediato.\n\n¿De qué tamaño es tu mascota?",
+        "step_1_options": [
+            { "label": "🐶 Pequeño (Yorky, Poodle, Maltés)", "value": "Pequeño" },
+            { "label": "🦮 Mediano (Cocker, Schnauzer, etc.)", "value": "Mediano" },
+            { "label": "🐕 Grande (Golden, Pastor Alemán)", "value": "Grande" }
+        ],
+        "step_2_message": "¡Genial! Para perritos de tamaño **{size}**, el valor base de la peluquería completa a domicilio (baño premium, corte de estética, secado sin estrés, oídos y uñas) es de **${price_completa} CLP** (incluye traslado).\n\n¿Qué servicio te gustaría agendar hoy?",
+        "step_2_options": [
+            { "label": "Peluquería Completa", "value": "Peluquería Completa", "price_type": "completa" },
+            { "label": "Solo Baño y Uñas", "value": "Solo Baño y Uñas", "price_type": "baño" }
+        ],
+        "step_3_message": "Estupendo. Tengo estas horas disponibles para agendar tu visita a domicilio en la V Región esta semana:\n\n¿Qué horario te acomoda?",
+        "step_3_options": [
+            { "label": "🕤 09:30 AM", "value": "09:30 AM" },
+            { "label": "🕐 13:00 PM", "value": "13:00 PM" },
+            { "label": "🕓 16:00 PM", "value": "16:00 PM" }
+        ],
+        "step_4_message": "Perfecto. Por último, escribe el **nombre de tu perrito** y tu **comuna o dirección** para registrar la visita a domicilio. 👇",
+        "step_4_placeholder": "Ej: Toby - Quilpué (El Belloto)...",
+        "step_5_message": "🎉 **¡Visita a Domicilio Agendada!** 🎉\n\n🐾 **Mascota:** {size}\n✂️ **Servicio:** {service}\n⏰ **Hora de Llegada:** {time}\n💵 **Valor Estimado:** ${price} CLP (Traslado incluido)\n📍 **Detalles de Dirección:** {input}\n\n¡Renato llegará en su vehículo de estética canina a la hora agendada! Nos vemos pronto. 🚙💨"
+    }
+}
