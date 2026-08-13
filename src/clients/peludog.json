@@ -1,0 +1,46 @@
+{
+    "client_id": "peludog",
+    "name": "PeluDog Quilpué 🐶",
+    "status": "Asistente Virtual 24/7",
+    "avatar_type": "dog",
+    "theme_color": "#F27A54",
+    "theme_color_dark": "#C84E29",
+    "theme_color_light": "#FEECE7",
+    "sidebar": {
+        "title": "Caso PeluDog",
+        "subtitle": "Propuesta de agendamiento sin fricción en WhatsApp",
+        "problem_title": "El Problema",
+        "problem_desc": "Mandar al cliente a una página web externa para agendar hace que muchos abandonen el proceso por flojera o lentitud. Además, tienes que seguir contestando mensajes manualmente para calificar el peso del perrito.",
+        "solution_title": "La Solución",
+        "solution_desc": "Un bot en WhatsApp que cotiza de inmediato según el peso de la mascota (alineado con tu política) y agenda la cita sin salir de la aplicación, multiplicando tus reservas.",
+        "profit_title": "Rentabilidad",
+        "profit_desc": "Menos clics = más citas concretadas. Ahorra tiempo manual respondiendo dudas de peso y precios."
+    },
+    "prices": {
+        "Menos de 10 kg": { "completa": 17000, "baño": 11000 },
+        "Entre 10 y 20 kg": { "completa": 22000, "baño": 15000 },
+        "Más de 20 kg": { "completa": 28000, "baño": 19000 }
+    },
+    "flow": {
+        "welcome": "¡Hola! 🐶 Bienvenido a **PeluDog Quilpué**.\n\nSabemos que nuestro nuevo sistema de cobro es en base al peso de tu mascota ⚖️, por lo que te ayudaré a cotizar y agendar tu cita en 30 segundos directamente en este chat.\n\n¿Cuánto pesa aproximadamente tu perrito?",
+        "step_1_options": [
+            { "label": "🐶 Menos de 10 kg (Pequeño)", "value": "Menos de 10 kg" },
+            { "label": "🦮 Entre 10 y 20 kg (Mediano)", "value": "Entre 10 y 20 kg" },
+            { "label": "🐕 Más de 20 kg (Grande)", "value": "Más de 20 kg" }
+        ],
+        "step_2_message": "¡Perfecto! Para perritos de **{size}**, el valor base del servicio completo (baño higiénico, secado, corte y uñas) es de **${price_completa} CLP**.\n\nRecuerda que si tiene exceso de nudos o pelecha, se evaluará al momento de recibirlo.\n\n¿Qué agendamos hoy?",
+        "step_2_options": [
+            { "label": "Peluquería Completa", "value": "Peluquería Completa", "price_type": "completa" },
+            { "label": "Solo Baño y Secado", "value": "Solo Baño y Secado", "price_type": "baño" }
+        ],
+        "step_3_message": "Excelente. Tenemos horas disponibles para esta semana en Belloto Norte (Av. Almirante Gómez Carreño 918).\n\n¿Qué horario te acomoda más?",
+        "step_3_options": [
+            { "label": "🕥 10:00 AM", "value": "10:00 AM" },
+            { "label": "🕒 14:30 PM", "value": "14:30 PM" },
+            { "label": "🕠 16:30 PM", "value": "16:30 PM" }
+        ],
+        "step_4_message": "Perfecto. Por último, escribe el **nombre y raza** de tu perrito para finalizar la reserva. 👇",
+        "step_4_placeholder": "Ej: Toby - Poodle...",
+        "step_5_message": "🎉 **¡Cita Reservada con Éxito en PeluDog!** 🎉\n\n🐶 **Mascota:** {input} ({size})\n✂️ **Servicio:** {service}\n⏰ **Hora:** {time}\n💵 **Valor Base:** ${price} CLP\n📍 **Ubicación:** Av. Almirante Gómez Carreño 918, Belloto Norte.\n\n¡Los esperamos! Te enviaremos un recordatorio por WhatsApp antes de tu cita. 🐾"
+    }
+}
