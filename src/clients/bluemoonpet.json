@@ -28,7 +28,7 @@
       { "label": "Perro mediano", "value": "Mediano" },
       { "label": "Perro grande", "value": "Grande" }
     ],
-    "step_2_message": "Perfecto. Para mascota **{size}**, estas son las opciones principales:\n\n1. **Servicio completo (${price_completa} CLP)**: baño, secado, corte estético, corte de uñas y limpieza básica.\n2. **Baño y mantención (${price_baño} CLP)**: baño, secado, cepillado y perfume.\n\n¿Qué servicio te gustaría solicitar?",
+    "step_2_message": "Perfecto. Para mascota **{size}**, estas son las opciones principales:\n\n1. **Servicio completo (${price_completa} CLP)**: baño, secado, corte estético, corte de uñas y limpieza básica.\n2. **Baño y mantención**: baño, secado, cepillado y perfume.\n\n¿Qué servicio te gustaría solicitar?",
     "step_2_options": [
       { "label": "Servicio completo", "value": "Servicio completo", "price_type": "completa" },
       { "label": "Baño y mantención", "value": "Baño y mantención", "price_type": "baño" }
