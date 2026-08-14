@@ -1,0 +1,46 @@
+{
+  "client_id": "peluqueriacaninalove_dpelos",
+  "name": "Love d Pelos",
+  "status": "Peluquería canina en Los Ángeles",
+  "avatar_type": "dog",
+  "theme_color": "#E85D8C",
+  "theme_color_dark": "#B83261",
+  "theme_color_light": "#FFE3EE",
+  "sidebar": {
+    "title": "Samod Pet Booking",
+    "subtitle": "Propuesta de automatización para Love d Pelos",
+    "problem_title": "El Problema",
+    "problem_desc": "Muchos clientes escriben por Instagram o WhatsApp para preguntar precios, horarios y disponibilidad mientras el equipo está atendiendo mascotas, bañando, secando o realizando cortes.",
+    "solution_title": "La Solución",
+    "solution_desc": "Un asistente conversacional puede responder al instante, orientar al cliente según el tamaño de su mascota, mostrar servicios disponibles y dejar una solicitud de agenda lista para confirmar.",
+    "profit_title": "Rentabilidad",
+    "profit_desc": "Ayuda a convertir consultas rápidas en reservas, reduce mensajes repetidos y permite mostrar una atención más ordenada y profesional desde el primer contacto."
+  },
+  "prices": {
+    "Pequeño": { "completa": 24000, "baño": 17000 },
+    "Mediano": { "completa": 30000, "baño": 22000 },
+    "Grande": { "completa": 38000, "baño": 28000 }
+  },
+  "flow": {
+    "welcome": "¡Hola! Bienvenido a **Love d Pelos**.\n\nSomos una peluquería canina en **Los Ángeles, Chile**, enfocada en cambios de look, higiene y cuidado estético para perritos.\n\nPara ayudarte a cotizar y solicitar una hora, dime el tamaño de tu mascota:",
+    "step_1_options": [
+      { "label": "Perro pequeño", "value": "Pequeño" },
+      { "label": "Perro mediano", "value": "Mediano" },
+      { "label": "Perro grande", "value": "Grande" }
+    ],
+    "step_2_message": "Perfecto. Para mascota **{size}**, estas son las opciones principales:\n\n1. **Servicio completo (${price_completa} CLP)**: baño, secado, corte estético, corte de uñas y limpieza básica.\n2. **Baño y mantención**: baño, secado, cepillado, perfume y retoque simple.\n\n¿Qué servicio te gustaría solicitar?",
+    "step_2_options": [
+      { "label": "Servicio completo", "value": "Servicio completo", "price_type": "completa" },
+      { "label": "Baño y mantención", "value": "Baño y mantención", "price_type": "baño" }
+    ],
+    "step_3_message": "Genial. Tenemos cupos disponibles durante la semana y también algunos horarios de mañana.\n\n¿Qué horario te acomoda más?",
+    "step_3_options": [
+      { "label": "Mar 10:30", "value": "Martes 10:30" },
+      { "label": "Jue 15:30", "value": "Jueves 15:30" },
+      { "label": "Sáb 11:00", "value": "Sábado 11:00" }
+    ],
+    "step_4_message": "Casi listo. Escribe tu **nombre**, el **nombre de tu perrito** y un teléfono de contacto para preparar la solicitud.",
+    "step_4_placeholder": "Ej: Sofía, Flofi, +56 9...",
+    "step_5_message": "**Solicitud recibida para Love d Pelos**\n\n**Datos:** {input}\n**Mascota:** {size}\n**Servicio:** {service}\n**Horario solicitado:** {time}\n**Valor estimado:** ${price} CLP\n**Ubicación:** Los Ángeles, Chile\n\nTe contactaremos para confirmar disponibilidad y entregar indicaciones antes de la visita."
+  }
+}
