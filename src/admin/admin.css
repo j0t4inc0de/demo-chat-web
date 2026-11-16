@@ -135,6 +135,17 @@ body {
     margin-bottom: 8px;
 }
 
+.metric-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: var(--primary-light);
+    color: var(--primary);
+}
+
 .metric-title {
     font-size: 0.82rem;
     font-weight: 600;
