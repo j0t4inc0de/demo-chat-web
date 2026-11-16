@@ -47,6 +47,18 @@ document.addEventListener("DOMContentLoaded", () => {
                     <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
                     <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
                     <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                 </svg>`,
+        butterfly: `<svg viewBox="0 0 24 24" fill="none" stroke="var(--whatsapp-green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 13V5"/>
+                    <path d="M12 5c-1.5-2.5-5-3.5-7.5-1.5S1.5 8 3.5 11c2.5 3.5 8.5 2 8.5 2"/>
+                    <path d="M12 5c1.5-2.5 5-3.5 7.5-1.5S22.5 8 20.5 11c-2.5 3.5-8.5 2-8.5 2"/>
+                    <path d="M12 13c-2 2-6 5.5-7.5 3s.5-5.5 2.5-6"/>
+                    <path d="M12 13c2 2 6 5.5 7.5 3s-.5-5.5-2.5-6"/>
+                    <path d="M12 13v7"/>
+                 </svg>`,
+        beauty: `<svg viewBox="0 0 24 24" fill="none" stroke="var(--whatsapp-green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2a9 9 0 0 1 9 9c0 4.97-4.03 9-9 9s-9-4.03-9-9a9 9 0 0 1 9-9z"/>
+                    <path d="M12 6v6l4 2"/>
                  </svg>`
     };
 
@@ -97,6 +109,16 @@ document.addEventListener("DOMContentLoaded", () => {
         solutionDesc.innerText = config.sidebar.solution_desc;
         profitTitle.innerText = config.sidebar.profit_title;
         profitDesc.innerText = config.sidebar.profit_desc;
+
+        // Configurar enlaces hacia la agenda web con el cliente actual
+        const agendaLink = document.getElementById("switch-to-agenda-btn");
+        if (agendaLink) {
+            agendaLink.href = `agenda/?c=${encodeURIComponent(clientKey)}`;
+        }
+        const mobileAgendaLink = document.getElementById("mobile-switch-to-agenda-btn");
+        if (mobileAgendaLink) {
+            mobileAgendaLink.href = `agenda/?c=${encodeURIComponent(clientKey)}`;
+        }
 
         // 3. Cabecera del chat
         contactName.innerText = config.name;
@@ -192,20 +214,38 @@ document.addEventListener("DOMContentLoaded", () => {
         bookingState.size = category;
         
         simulateBotResponse(() => {
-            // Extraer precios
-            const priceConf = config.prices[category];
+            // Soporte dinámico para opciones personalizadas por categoría
+            if (config.flow.category_options && config.flow.category_options[category]) {
+                const catConf = config.flow.category_options[category];
+                appendMessage(catConf.message);
+                const replies = catConf.options.map(opt => {
+                    return {
+                        label: opt.label,
+                        action: () => selectService(opt.value, opt.price || 0)
+                    };
+                });
+                renderQuickReplies(replies);
+                return;
+            }
+
+            // Flujo estándar por defecto (retrocompatible)
+            const priceConf = config.prices ? config.prices[category] : null;
             
             // Reemplazar textos dinámicos de precio en la plantilla del mensaje
             let msgText = config.flow.step_2_message;
             msgText = msgText.replace("{size}", category);
-            msgText = msgText.replace("${price_completa}", priceConf.completa.toLocaleString('es-CL'));
-            msgText = msgText.replace("${price_bano}", priceConf.baño.toLocaleString('es-CL'));
+            if (priceConf) {
+                if (priceConf.completa) msgText = msgText.replace("${price_completa}", priceConf.completa.toLocaleString('es-CL'));
+                if (priceConf.baño) msgText = msgText.replace("${price_bano}", priceConf.baño.toLocaleString('es-CL'));
+            }
 
             appendMessage(msgText);
             
             // Renderizar las respuestas para el paso 2
             const replies = config.flow.step_2_options.map(opt => {
-                const targetPrice = priceConf[opt.price_type];
+                const targetPrice = opt.price !== undefined
+                    ? opt.price
+                    : (priceConf && priceConf[opt.price_type] !== undefined ? priceConf[opt.price_type] : 0);
                 return {
                     label: opt.label,
                     action: () => selectService(opt.value, targetPrice)

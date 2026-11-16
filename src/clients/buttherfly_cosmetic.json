@@ -1,0 +1,135 @@
+{
+    "client_id": "buttherfly_cosmetic",
+    "name": "Butterfly Cosmetic 🦋",
+    "specialist": "Camila Galindo",
+    "status": "Asistente Virtual 24/7",
+    "avatar_type": "butterfly",
+    "theme_color": "#C85A80",
+    "theme_color_dark": "#7B2346",
+    "theme_color_light": "#FDEEF3",
+    "business_info": {
+        "specialist": "Camila Galindo",
+        "role": "Cosmetóloga Profesional",
+        "services_summary": "Manicure | Extensiones de pestañas | Lifting | Perfilado de cejas",
+        "location": "Villa Alemana / V Región 📍",
+        "instagram": "@camiilajajajax2",
+        "business_ig": "@buttherfly.cosmetic",
+        "followers": "1.760 seguidores",
+        "booking_note": "Atención personalizada 1 a 1 en cabina privada."
+    },
+    "sidebar": {
+        "title": "Propuesta Camila Galindo",
+        "subtitle": "Automatización para Butterfly Cosmetic (@buttherfly.cosmetic)",
+        "problem_title": "El Problema",
+        "problem_desc": "Al realizar manicure rusa, kapping o extensiones, estás con guantes y 100% enfocada en tu clienta. No puedes pausar para responder WhatsApp o DMs de Instagram, y si tardas en responder, las clientas cotizan con otra manicurista de Villa Alemana.",
+        "solution_title": "La Solución (2 Opciones)",
+        "solution_desc": "Te presentamos 2 alternativas: un Asistente en WhatsApp que conversa y cierra citas 24/7 de forma automática, o un Portal Web de Agenda Online para poner en el link de tu biografía de Instagram sin pagar mensualidad telefónica.",
+        "profit_title": "Rentabilidad",
+        "profit_desc": "Recuperando solo 3 a 5 reservas al mes que antes se perdían por demoras en responder, sumas entre $60.000 y $125.000 CLP adicionales limpios a tu agenda."
+    },
+    "prices": {
+        "Manicure & Uñas": { "completa": 25000, "baño": 17000 },
+        "Pestañas & Cejas": { "completa": 28000, "baño": 18000 },
+        "Limpieza & Cuidado": { "completa": 22000, "baño": 12000 }
+    },
+    "services": [
+        {
+            "id": "esmaltado",
+            "name": "Esmaltado Permanente",
+            "category": "Manicure & Uñas",
+            "price": 17000,
+            "duration": "60 min",
+            "description": "Preparación rusa combinada, nivelación de uña y esmaltado de alta duración con brillo profesional."
+        },
+        {
+            "id": "kapping",
+            "name": "Kapping en Gel",
+            "category": "Manicure & Uñas",
+            "price": 19000,
+            "duration": "75 min",
+            "description": "Capa protectora de gel sobre la uña natural para dar máxima firmeza y evitar quiebres."
+        },
+        {
+            "id": "softgel",
+            "name": "Soft Gel",
+            "category": "Manicure & Uñas",
+            "price": 25000,
+            "duration": "90 min",
+            "description": "Extensión completa en tips de gel ultraligeros, acabado anatómico y máxima durabilidad."
+        },
+        {
+            "id": "limpieza_unas",
+            "name": "Limpieza de Uñas",
+            "category": "Manicure & Uñas",
+            "price": 12000,
+            "duration": "45 min",
+            "description": "Limpieza profunda de cutículas, limado estético, exfoliación e hidratación de manos."
+        },
+        {
+            "id": "lifting",
+            "name": "Lifting de Pestañas + Perfilado",
+            "category": "Pestañas & Cejas",
+            "price": 18000,
+            "duration": "60 min",
+            "description": "Curvatura natural con tinte para pestañas + visagismo y perfilado de cejas profesional."
+        },
+        {
+            "id": "extensiones",
+            "name": "Extensiones de Pestañas",
+            "category": "Pestañas & Cejas",
+            "price": 28000,
+            "duration": "90 min",
+            "description": "Aplicación pelo a pelo efecto clásico o híbrido para una mirada expresiva y definida."
+        }
+    ],
+    "flow": {
+        "welcome": "¡Hola! 🦋 Bienvenida a **Butterfly Cosmetic** de Camila Galindo.\n\nEn este momento estoy en cabina realizando servicios (manicure/pestañas) con guantes y 100% enfocada en una clienta 💅.\n\nSin embargo, por aquí puedes cotizar, revisar precios y reservar tu hora de inmediato en 30 segundos ✨.\n\n¿Qué tipo de atención te gustaría agendar?",
+        "step_1_options": [
+            { "label": "💅 Manicure & Uñas", "value": "Manicure & Uñas" },
+            { "label": "👁️ Pestañas & Cejas", "value": "Pestañas & Cejas" },
+            { "label": "🌸 Limpieza & Cuidado", "value": "Limpieza & Cuidado" }
+        ],
+        "category_options": {
+            "Manicure & Uñas": {
+                "message": "¡Hermosa elección! 💅 En uñas trabajamos con preparación rusa combinada y productos profesionales de alta gama.\n\nEstos son los valores de nuestros servicios principales:\n• ✨ **Esmaltado Permanente:** $17.000 CLP\n• 💎 **Kapping en Gel:** $19.000 CLP\n• 👑 **Soft Gel:** $25.000 CLP\n• 🌸 **Limpieza de Uñas:** $12.000 CLP\n\n¿Cuál de ellos deseas realizarte?",
+                "options": [
+                    { "label": "✨ Esmaltado Permanente ($17.000)", "value": "Esmaltado Permanente", "price": 17000 },
+                    { "label": "💎 Kapping en Gel ($19.000)", "value": "Kapping en Gel", "price": 19000 },
+                    { "label": "👑 Soft Gel ($25.000)", "value": "Soft Gel", "price": 25000 },
+                    { "label": "🌸 Limpieza de Uñas ($12.000)", "value": "Limpieza de Uñas", "price": 12000 }
+                ]
+            },
+            "Pestañas & Cejas": {
+                "message": "¡Perfecto! 👁️ Para realzar tu mirada contamos con técnicas certificadas:\n\n• ✨ **Lifting + Perfilado de Cejas:** $18.000 CLP\n• 🌿 **Extensiones de Pestañas (Pelo a pelo):** $28.000 CLP\n\n¿Cuál te gustaría reservar?",
+                "options": [
+                    { "label": "✨ Lifting + Perfilado ($18.000)", "value": "Lifting de Pestañas + Perfilado", "price": 18000 },
+                    { "label": "🌿 Extensiones Pestañas ($28.000)", "value": "Extensiones de Pestañas", "price": 28000 }
+                ]
+            },
+            "Limpieza & Cuidado": {
+                "message": "¡Excelente! 🌸 Cuidar de tus manos y piel es esencial:\n\n• 💅 **Limpieza de Uñas Completa:** $12.000 CLP\n• ✨ **Limpieza Facial y Cuidado Express:** $20.000 CLP\n\n¿Cuál deseas agendar?",
+                "options": [
+                    { "label": "💅 Limpieza de Uñas ($12.000)", "value": "Limpieza de Uñas", "price": 12000 },
+                    { "label": "✨ Limpieza Facial ($20.000)", "value": "Limpieza Facial Express", "price": 20000 }
+                ]
+            }
+        },
+        "step_2_message": "¡Excelente elección! 💅 Estos son los valores estimados:\n\n1. ✨ **Esmaltado Permanente (${price_bano} CLP)**\n2. 👑 **Soft Gel (${price_completa} CLP)**\n\n¿Qué servicio te gustaría?",
+        "step_2_options": [
+            { "label": "Esmaltado Permanente", "value": "Esmaltado Permanente", "price": 17000, "price_type": "baño" },
+            { "label": "Kapping en Gel", "value": "Kapping en Gel", "price": 19000, "price_type": "baño" },
+            { "label": "Soft Gel", "value": "Soft Gel", "price": 25000, "price_type": "completa" },
+            { "label": "Limpieza de Uñas", "value": "Limpieza de Uñas", "price": 12000, "price_type": "baño" }
+        ],
+        "step_3_message": "Genial. Atendemos de Lunes a Sábado en **Villa Alemana** 📍.\n\nTengo estos horarios disponibles para esta semana:\n\n¿Cuál te acomoda mejor?",
+        "step_3_options": [
+            { "label": "🕥 Jueves 11:00 AM", "value": "Jueves 11:00 AM" },
+            { "label": "🕒 Viernes 15:30 PM", "value": "Viernes 15:30 PM" },
+            { "label": "🕠 Sábado 11:30 AM", "value": "Sábado 11:30 AM" },
+            { "label": "🕓 Sábado 16:30 PM", "value": "Sábado 16:30 PM" }
+        ],
+        "step_4_message": "¡Casi listo! Para asegurar tu cupo en mi agenda, por favor escribe abajo tu **nombre y apellido** 👇:",
+        "step_4_placeholder": "Escribe tu nombre y apellido...",
+        "step_5_message": "🎉 **¡Cita Reservada con Éxito!** 🦋\n\n👤 **Clienta:** {input}\n💅 **Servicio:** {service}\n📅 **Horario:** {time}\n💵 **Total Estimado:** ${price} CLP\n📍 **Lugar:** Villa Alemana (V Región).\n\n¡Camila Galindo (@camiilajajajax2) te esperará lista para consentirte! Te llegará un recordatorio a tu WhatsApp antes de tu cita ✨."
+    }
+}

@@ -8,11 +8,18 @@ En lugar de reescribir código para cada cliente, el simulador carga dinámicame
 
 ## 🎯 Cómo funciona la Carga Dinámica
 
-La aplicación lee el parámetro `c` en la URL de navegación:
-*   `http://demo-web.wearesamod.com/?c=huellitas_felices` ➔ Carga la demo de Peluquería Canina **Huellitas Felices v.a** (`clients/huellitas_felices.json`).
-*   `http://demo-web.wearesamod.com/?c=barberia` ➔ Carga la demo de la Barbería **Talento Urbano** (`clients/barberia.json`).
+La aplicación lee el parámetro `c` en la URL de navegación para dos modalidades distintas:
 
-Si el parámetro no coincide o está vacío, cargará por defecto `huellitas_felices`.
+### 1. Modalidad A: Simulador WhatsApp
+*   `https://demo-web.wearesamod.com/?c=buttherfly_cosmetic` ➔ Demo para **Butterfly Cosmetic** (Camila Galindo - Cosmetóloga).
+*   `https://demo-web.wearesamod.com/?c=huellitas_felices` ➔ Demo para Peluquería Canina **Huellitas Felices v.a**.
+*   `https://demo-web.wearesamod.com/?c=barberia` ➔ Demo para Barbería **Talento Urbano**.
+
+### 2. Modalidad B: Portal Agenda Web Online (Estilo Clínica / Salón)
+*   `https://demo-web.wearesamod.com/agenda/?c=buttherfly_cosmetic` ➔ Portal de autoservicio estilo clínica/salón para link en bio de Instagram sin costo mensual de telefonía.
+*   `https://demo-web.wearesamod.com/agenda/?c=barberia` ➔ Agenda online de la barbería.
+
+Si el parámetro no coincide o está vacío, cargará por defecto `huellitas_felices` (en chat) o `buttherfly_cosmetic` (en agenda).
 
 ---
 

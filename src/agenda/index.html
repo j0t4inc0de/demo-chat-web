@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cargando Agenda Online... | We Are Samod</title>
+    <!-- Fuente Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="agenda.css">
+</head>
+<body>
+    <!-- Pantalla de Carga -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="spinner"></div>
+        <p>Cargando portal de agendamiento online...</p>
+    </div>
+
+    <!-- Contenedor Principal -->
+    <div class="agenda-layout" id="agenda-layout" style="display: none;">
+        
+        <!-- Barra Superior / Header Clínico -->
+        <header class="agenda-header">
+            <div class="header-container">
+                <div class="brand-block">
+                    <div class="brand-avatar" id="brand-avatar">
+                        <!-- Icono / Avatar inyectado dinámicamente -->
+                    </div>
+                    <div class="brand-details">
+                        <div class="title-row">
+                            <h1 id="brand-name">Cargando...</h1>
+                            <span class="verified-badge" title="Profesional Certificada">
+                                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                Certificado
+                            </span>
+                        </div>
+                        <p class="brand-meta" id="brand-meta">Cargando datos del especialista...</p>
+                    </div>
+                </div>
+
+                <div class="header-actions">
+                    <div class="option-pill">
+                        <span class="pill-dot"></span>
+                        <strong>Opción B:</strong> Portal Web
+                    </div>
+                    <a href="../" id="switch-to-chat-btn" class="nav-switch-btn" title="Ver la alternativa conversacional por WhatsApp">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+                            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                        </svg>
+                        <span>Ver Demo WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Banner Comparativo Ejecutivo (Pitch We Are Samod) -->
+        <section class="executive-banner">
+            <div class="banner-content">
+                <div class="banner-tag">Solución para Redes Sociales & Instagram</div>
+                <h2>Portal de Reserva Online 24/7 (Estilo Clínica / Salón)</h2>
+                <p>
+                    Diseñado para colocar como <strong>Link en la Bio de Instagram</strong>. Tus clientas seleccionan su servicio, escogen fecha/hora y dejan sus datos en menos de 1 minuto sin que tengas que pausar tu trabajo en cabina ni pagar planes mensuales de telefonía.
+                </p>
+                <div class="banner-perks">
+                    <span class="perk-item">✓ Sin cobro mensual de línea telefónica</span>
+                    <span class="perk-item">✓ Autogestión directa para tus clientas</span>
+                    <span class="perk-item">✓ Reduce 100% las consultas repetitivas de precios</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contenedor del Flujo de Agendamiento -->
+        <main class="booking-container">
+            
+            <!-- Barra de Pasos (Stepper) -->
+            <div class="stepper-bar">
+                <div class="step-item active" id="step-nav-1">
+                    <span class="step-num">1</span>
+                    <span class="step-label">Servicio</span>
+                </div>
+                <div class="step-line" id="step-line-1"></div>
+                <div class="step-item" id="step-nav-2">
+                    <span class="step-num">2</span>
+                    <span class="step-label">Fecha y Hora</span>
+                </div>
+                <div class="step-line" id="step-line-2"></div>
+                <div class="step-item" id="step-nav-3">
+                    <span class="step-num">3</span>
+                    <span class="step-label">Tus Datos</span>
+                </div>
+                <div class="step-line" id="step-line-3"></div>
+                <div class="step-item" id="step-nav-4">
+                    <span class="step-num">4</span>
+                    <span class="step-label">Confirmación</span>
+                </div>
+            </div>
+
+            <!-- PASO 1: SELECCIÓN DE SERVICIO -->
+            <section class="booking-step-panel" id="panel-step-1">
+                <div class="section-title-box">
+                    <h2>Selecciona el Servicio que deseas</h2>
+                    <p>Atención personalizada 1 a 1 en cabina privada. Precios transparentes sin costos ocultos.</p>
+                </div>
+
+                <div class="services-grid" id="services-grid">
+                    <!-- Se inyecta dinámicamente con JS -->
+                </div>
+
+                <div class="step-actions right">
+                    <button class="btn btn-primary" id="btn-to-step-2" disabled>
+                        <span>Continuar a Fecha y Hora</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </button>
+                </div>
+            </section>
+
+            <!-- PASO 2: SELECCIÓN DE FECHA Y HORA -->
+            <section class="booking-step-panel" id="panel-step-2" style="display: none;">
+                <div class="section-title-box">
+                    <h2>Selecciona Día y Horario</h2>
+                    <p>Disponibilidad en tiempo real para esta semana en Villa Alemana.</p>
+                </div>
+
+                <!-- Resumen rápido del servicio elegido -->
+                <div class="selected-service-summary" id="selected-service-chip">
+                    <!-- Inyectado por JS -->
+                </div>
+
+                <!-- Selector de Fechas (Carrusel semanal) -->
+                <div class="date-strip-wrapper">
+                    <label class="input-label">Días Disponibles:</label>
+                    <div class="date-strip" id="date-strip">
+                        <!-- Botones de fecha inyectados dinámicamente -->
+                    </div>
+                </div>
+
+                <!-- Selector de Bloques Horarios -->
+                <div class="time-slots-wrapper">
+                    <label class="input-label">Bloques de Hora:</label>
+                    
+                    <div class="time-block-group">
+                        <span class="block-subtitle">🌅 Mañana</span>
+                        <div class="slots-grid" id="morning-slots">
+                            <!-- Inyectado por JS -->
+                        </div>
+                    </div>
+
+                    <div class="time-block-group">
+                        <span class="block-subtitle">🌇 Tarde</span>
+                        <div class="slots-grid" id="afternoon-slots">
+                            <!-- Inyectado por JS -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-actions split">
+                    <button class="btn btn-secondary" id="btn-back-to-1">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                        <span>Volver a Servicios</span>
+                    </button>
+                    <button class="btn btn-primary" id="btn-to-step-3" disabled>
+                        <span>Continuar a Mis Datos</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </button>
+                </div>
+            </section>
+
+            <!-- PASO 3: FORMULARIO DE CLIENTA -->
+            <section class="booking-step-panel" id="panel-step-3" style="display: none;">
+                <div class="section-title-box">
+                    <h2>Información de Contacto</h2>
+                    <p>Completa tus datos para agendar formalmente la cita y enviarte el recordatorio.</p>
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="client-name">Nombre y Apellido *</label>
+                        <input type="text" id="client-name" class="form-control" placeholder="Ej: Valentina Morales" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="client-phone">Teléfono WhatsApp *</label>
+                        <input type="tel" id="client-phone" class="form-control" placeholder="+56 9 1234 5678" required>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="client-email">Correo Electrónico (Para recordatorio)</label>
+                        <input type="email" id="client-email" class="form-control" placeholder="ejemplo@correo.com">
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="client-notes">Detalle o requerimiento especial (Opcional)</label>
+                        <textarea id="client-notes" class="form-control" rows="3" placeholder="Ej: Traigo esmaltado anterior para retirar, diseño especial de nail art, piel sensible, etc."></textarea>
+                    </div>
+                </div>
+
+                <!-- Resumen previo a confirmar -->
+                <div class="pre-confirm-box" id="pre-confirm-summary">
+                    <!-- Resumen del horario y servicio -->
+                </div>
+
+                <div class="step-actions split">
+                    <button class="btn btn-secondary" id="btn-back-to-2">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                        <span>Cambiar Fecha u Hora</span>
+                    </button>
+                    <button class="btn btn-primary btn-confirm" id="btn-submit-booking">
+                        <span>Confirmar Mi Reserva</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+            </section>
+
+            <!-- PASO 4: VOUCHER / COMPROBANTE DIGITAL DE RESERVA -->
+            <section class="booking-step-panel" id="panel-step-4" style="display: none;">
+                <div class="voucher-wrapper">
+                    
+                    <div class="voucher-success-header">
+                        <div class="success-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="36" height="36">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                        </div>
+                        <h2>¡Cita Reservada con Éxito!</h2>
+                        <p>Tu hora ha quedado bloqueada en el calendario de la profesional.</p>
+                    </div>
+
+                    <!-- Tarjeta / Ficha Clínica de Reserva -->
+                    <div class="clinical-voucher-card">
+                        <div class="voucher-card-top">
+                            <div>
+                                <span class="voucher-folio" id="voucher-folio">FOLIO: #BC-0000</span>
+                                <h3 id="voucher-specialist">Camila Galindo</h3>
+                                <p class="voucher-role" id="voucher-role">Cosmetóloga Profesional</p>
+                            </div>
+                            <span class="voucher-status-badge">RESERVADO</span>
+                        </div>
+
+                        <div class="voucher-card-body">
+                            <div class="voucher-item">
+                                <span class="v-label">Clienta</span>
+                                <span class="v-value" id="voucher-client-name">-</span>
+                            </div>
+                            <div class="voucher-item">
+                                <span class="v-label">Servicio</span>
+                                <span class="v-value highlight" id="voucher-service">-</span>
+                            </div>
+                            <div class="voucher-item">
+                                <span class="v-label">Fecha</span>
+                                <span class="v-value" id="voucher-date">-</span>
+                            </div>
+                            <div class="voucher-item">
+                                <span class="v-label">Horario</span>
+                                <span class="v-value" id="voucher-time">-</span>
+                            </div>
+                            <div class="voucher-item">
+                                <span class="v-label">Valor Estimado</span>
+                                <span class="v-value price-tag" id="voucher-price">-</span>
+                            </div>
+                            <div class="voucher-item">
+                                <span class="v-label">Ubicación</span>
+                                <span class="v-value" id="voucher-location">Villa Alemana, V Región 📍</span>
+                            </div>
+                        </div>
+
+                        <div class="voucher-card-footer">
+                            <p class="voucher-hint">
+                                💡 Recuerda asistir 5 minutos antes. Ante cualquier eventualidad, puedes coordinar directamente por WhatsApp.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Acciones del Comprobante -->
+                    <div class="voucher-actions">
+                        <a href="#" id="btn-whatsapp-confirm" target="_blank" class="btn btn-whatsapp">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                                <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-5.46-4.45-9.92-9.91-9.92zm0 18.17c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31c-.82-1.31-1.26-2.83-1.26-4.4 0-4.54 3.7-8.24 8.25-8.24 4.55 0 8.25 3.7 8.25 8.24 0 4.54-3.7 8.26-8.25 8.26zm4.52-6.19c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.44.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.12-.23-.19-.48-.31z"/>
+                            </svg>
+                            <span>Enviar Resumen a Camila por WhatsApp</span>
+                        </a>
+                        <button class="btn btn-secondary" id="btn-restart-booking">
+                            <span>🔄 Agendar Otra Cita</span>
+                        </button>
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Matriz Comparativa para la Reunión Comercial -->
+        <section class="comparison-matrix-section">
+            <div class="matrix-container">
+                <div class="matrix-header">
+                    <h3>Comparativa de Alternativas para Camila Galindo</h3>
+                    <p>Dos caminos tecnológicos para automatizar tu negocio según tu presupuesto y estilo de trabajo:</p>
+                </div>
+
+                <div class="matrix-grid">
+                    <!-- Opción 1: WhatsApp -->
+                    <div class="matrix-card">
+                        <div class="card-badge">Opción A</div>
+                        <h4>Bot Asistente WhatsApp 24/7</h4>
+                        <div class="card-price-note">Atención conversacional directa</div>
+                        <ul class="matrix-list">
+                            <li><strong>Canal:</strong> Directamente dentro del WhatsApp de tu negocio.</li>
+                            <li><strong>Experiencia:</strong> Conversación guiada natural en el chat preferido de tus clientas.</li>
+                            <li><strong>Recordatorios:</strong> Envíos automáticos por WhatsApp 2 horas antes de la cita.</li>
+                            <li><strong>Costo recurrente:</strong> Requiere número/chip comercial y costo mensual de suscripción API/servidor.</li>
+                            <li><strong>Ideal si:</strong> La gran mayoría de tus clientas te escribe directo a WhatsApp y valoran el trato por chat.</li>
+                        </ul>
+                        <a href="../" id="matrix-to-chat-btn" class="btn btn-outline">Probar Demo WhatsApp ➔</a>
+                    </div>
+
+                    <!-- Opción 2: Agenda Web Online -->
+                    <div class="matrix-card featured">
+                        <div class="card-badge highlight">Opción B (Esta Pantalla)</div>
+                        <h4>Portal Agenda Web Online</h4>
+                        <div class="card-price-note">Autogestión por Link en Biografía</div>
+                        <ul class="matrix-list">
+                            <li><strong>Canal:</strong> Enlace web directo (`link en bio` de Instagram o WhatsApp).</li>
+                            <li><strong>Experiencia:</strong> Catálogo visual de servicios con precios y disponibilidad en vivo estilo clínica/salón.</li>
+                            <li><strong>Sin planes telefónicos:</strong> No requiere pagar planes ni chips mensuales adicionales.</li>
+                            <li><strong>Facilidad:</strong> La clienta reserva por sí misma sin esperas de respuesta en DMs.</li>
+                            <li><strong>Ideal si:</strong> Captas muchas clientas desde Instagram (@buttherfly.cosmetic) y buscas costo operativo mínimo.</li>
+                        </ul>
+                        <button class="btn btn-primary" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">Ver Simulador Arriba ➔</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="agenda-footer">
+            <p>Propuesta tecnológica desarrollada a medida por <strong>We Are Samod 🇨🇱</strong> para Butterfly Cosmetic.</p>
+        </footer>
+
+    </div>
+
+    <!-- Script del Agendamiento Web -->
+    <script src="agenda.js"></script>
+</body>
+</html>
