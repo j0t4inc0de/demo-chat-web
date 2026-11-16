@@ -110,14 +110,15 @@ document.addEventListener("DOMContentLoaded", () => {
         profitTitle.innerText = config.sidebar.profit_title;
         profitDesc.innerText = config.sidebar.profit_desc;
 
-        // Configurar enlaces hacia la agenda web con el cliente actual
-        const agendaLink = document.getElementById("switch-to-agenda-btn");
-        if (agendaLink) {
-            agendaLink.href = `agenda/?c=${encodeURIComponent(clientKey)}`;
+        // Configurar enlace de la matriz comparativa hacia la agenda web con el cliente actual
+        const matrixAgendaLink = document.getElementById("matrix-to-agenda-link");
+        if (matrixAgendaLink) {
+            matrixAgendaLink.href = `agenda/?c=${encodeURIComponent(clientKey)}`;
         }
-        const mobileAgendaLink = document.getElementById("mobile-switch-to-agenda-btn");
-        if (mobileAgendaLink) {
-            mobileAgendaLink.href = `agenda/?c=${encodeURIComponent(clientKey)}`;
+        const matrixTitle = document.getElementById("matrix-title");
+        if (matrixTitle && (config.specialist || config.name)) {
+            const specialistName = config.specialist || config.name;
+            matrixTitle.innerText = `Comparativa de Alternativas para ${specialistName}`;
         }
 
         // 3. Cabecera del chat

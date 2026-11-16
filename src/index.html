@@ -63,10 +63,6 @@
             </div>
             
             <div class="pitch-footer">
-                <a href="agenda/" id="switch-to-agenda-btn" class="switch-view-btn">
-                    <span>📅 Ver Opción B: Agenda Web Online</span>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><polyline points="9 18 15 12 9 6"></polyline></svg>
-                </a>
                 <p>
                     Prueba el simulador de la derecha como si fueras un cliente agendando una cita.
                     <svg class="footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -80,12 +76,6 @@
         <!-- Módulo del Teléfono Movil (Simulador de WhatsApp) -->
         <div class="phone-mockup">
             <div class="phone-screen">
-                
-                <!-- Banner Móvil para Alternar a Agenda Web -->
-                <a href="agenda/" id="mobile-switch-to-agenda-btn" class="mobile-switch-banner">
-                    <span>📅 ¿Prefieres ver la <strong>Agenda Web Online</strong>?</span>
-                    <span class="banner-arrow">Ver Demo ➔</span>
-                </a>
                 
                 <!-- Cabecera de WhatsApp -->
                 <div class="chat-header">
@@ -123,7 +113,55 @@
         </div>
 
     </div>
+
+    <!-- Sección Matriz Comparativa (Desktop & Mobile) -->
+    <section class="comparison-matrix-section" id="comparison-section">
+        <div class="matrix-container">
+            <div class="matrix-header">
+                <div class="matrix-badge">Estrategia Comercial We Are Samod</div>
+                <h2 id="matrix-title">Comparativa de Alternativas para Camila Galindo</h2>
+                <p id="matrix-subtitle">Dos caminos tecnológicos para automatizar tu negocio según tu presupuesto y estilo de trabajo</p>
+            </div>
+
+            <div class="matrix-grid">
+                <!-- Opción 1: WhatsApp -->
+                <div class="matrix-card featured">
+                    <div class="card-badge highlight">Opción A (Esta Pantalla)</div>
+                    <h4>Bot Asistente WhatsApp 24/7</h4>
+                    <div class="card-price-note">Atención conversacional directa</div>
+                    <ul class="matrix-list">
+                        <li><strong>Canal:</strong> Directamente dentro del WhatsApp de tu negocio.</li>
+                        <li><strong>Experiencia:</strong> Conversación guiada natural en el chat preferido de tus clientas.</li>
+                        <li><strong>Recordatorios:</strong> Envíos automáticos por WhatsApp 2 horas antes de la cita.</li>
+                        <li><strong>Costo recurrente:</strong> Requiere número/chip comercial y costo mensual de suscripción API/servidor.</li>
+                        <li><strong>Ideal si:</strong> La gran mayoría de tus clientas te escribe directo a WhatsApp y valoran el trato por chat.</li>
+                    </ul>
+                    <button class="btn-matrix btn-primary" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">Probar Simulador Arriba ➔</button>
+                </div>
+
+                <!-- Opción 2: Agenda Web Online -->
+                <div class="matrix-card">
+                    <div class="card-badge">Opción B</div>
+                    <h4>Portal Agenda Web Online</h4>
+                    <div class="card-price-note">Autogestión por Link en Biografía</div>
+                    <ul class="matrix-list">
+                        <li><strong>Canal:</strong> Enlace web directo (`link en bio` de Instagram o WhatsApp).</li>
+                        <li><strong>Experiencia:</strong> Catálogo visual de servicios con precios y disponibilidad en vivo estilo clínica/salón.</li>
+                        <li><strong>Sin planes telefónicos:</strong> No requiere pagar planes ni chips mensuales adicionales.</li>
+                        <li><strong>Facilidad:</strong> La clienta reserva por sí misma sin esperas de respuesta en DMs.</li>
+                        <li><strong>Ideal si:</strong> Captas muchas clientas desde Instagram (@buttherfly.cosmetic) y buscas costo operativo mínimo.</li>
+                    </ul>
+                    <a href="agenda/" id="matrix-to-agenda-link" class="btn-matrix btn-outline">Ver Demo Agenda Online ➔</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+        <p>Propuesta tecnológica desarrollada a medida por <strong>We Are Samod 🇨🇱</strong></p>
+    </footer>
     
-    <script src="script.js?v=1.0.2"></script>
+    <script src="script.js?v=1.0.3"></script>
 </body>
 </html>
