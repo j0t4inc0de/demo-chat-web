@@ -8,7 +8,168 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=2.2.0">
+    <style>
+        /* Estilos integrados como respaldo garantizado contra cache */
+        .comparison-matrix-section {
+            width: 100%;
+            max-width: 1100px;
+            margin-top: 36px;
+            background: #ffffff;
+            border-radius: 20px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+            padding: 40px 30px;
+            box-sizing: border-box;
+        }
+        .matrix-container { width: 100%; }
+        .matrix-header { text-align: center; margin-bottom: 28px; }
+        .matrix-badge {
+            display: inline-block;
+            background: var(--whatsapp-light, #DCF8C6);
+            color: var(--whatsapp-green-dark, #075E54);
+            font-size: 0.74rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+        }
+        .matrix-header h2 {
+            font-size: 1.45rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 6px;
+        }
+        .matrix-header p {
+            font-size: 0.92rem;
+            color: #64748b;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .matrix-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px;
+        }
+        .matrix-card {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 26px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .matrix-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+        }
+        .matrix-card.featured {
+            border-color: var(--whatsapp-green, #128C7E);
+            background: #ffffff;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+        }
+        .card-badge {
+            display: inline-block;
+            align-self: flex-start;
+            font-size: 0.72rem;
+            font-weight: 700;
+            background: #e2e8f0;
+            color: #475569;
+            padding: 3px 10px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        .card-badge.highlight {
+            background: var(--whatsapp-light, #DCF8C6);
+            color: var(--whatsapp-green-dark, #075E54);
+        }
+        .matrix-card h4 {
+            font-size: 1.22rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 4px;
+        }
+        .card-price-note {
+            font-size: 0.84rem;
+            font-weight: 600;
+            color: #059669;
+            margin-bottom: 16px;
+        }
+        .matrix-list {
+            list-style: none;
+            font-size: 0.88rem;
+            color: #334155;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 24px;
+            padding: 0;
+        }
+        .matrix-list li { line-height: 1.45; }
+        .matrix-list li strong { color: #0f172a; }
+        .btn-matrix {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            text-decoration: none;
+            font-family: inherit;
+            transition: all 0.2s;
+            box-sizing: border-box;
+        }
+        .btn-matrix.btn-primary {
+            background: var(--whatsapp-green, #128C7E);
+            color: #ffffff;
+        }
+        .btn-matrix.btn-primary:hover {
+            background: var(--whatsapp-green-dark, #075E54);
+        }
+        .btn-matrix.btn-outline {
+            background: transparent;
+            border: 2px solid var(--whatsapp-green, #128C7E);
+            color: var(--whatsapp-green, #128C7E);
+        }
+        .btn-matrix.btn-outline:hover {
+            background: var(--whatsapp-light, #DCF8C6);
+        }
+        .app-footer {
+            width: 100%;
+            max-width: 1100px;
+            text-align: center;
+            padding: 24px 0 10px;
+            font-size: 0.82rem;
+            color: #64748b;
+        }
+        @media (max-width: 768px) {
+            .comparison-matrix-section {
+                border-radius: 0;
+                border-left: none;
+                border-right: none;
+                margin-top: 0;
+                padding: 32px 16px;
+                background: #ffffff;
+            }
+            .matrix-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            .matrix-header h2 {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Pantalla de Carga Inicial -->
@@ -115,7 +276,7 @@
     </div>
 
     <!-- Sección Matriz Comparativa (Desktop & Mobile) -->
-    <section class="comparison-matrix-section" id="comparison-section">
+    <section class="comparison-matrix-section" id="comparison-section" style="display: none;">
         <div class="matrix-container">
             <div class="matrix-header">
                 <div class="matrix-badge">Estrategia Comercial We Are Samod</div>
@@ -158,10 +319,10 @@
     </section>
 
     <!-- Footer -->
-    <footer class="app-footer">
+    <footer class="app-footer" style="display: none;">
         <p>Propuesta tecnológica desarrollada a medida por <strong>We Are Samod 🇨🇱</strong></p>
     </footer>
     
-    <script src="script.js?v=1.0.3"></script>
+    <script src="script.js?v=2.2.0"></script>
 </body>
 </html>

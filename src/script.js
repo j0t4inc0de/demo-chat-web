@@ -132,6 +132,10 @@ document.addEventListener("DOMContentLoaded", () => {
         // 5. Ocultar pantalla de carga e iniciar
         loadingScreen.style.display = "none";
         appContainer.style.display = "flex";
+        const compSection = document.getElementById("comparison-section");
+        if (compSection) compSection.style.display = "block";
+        const footerElem = document.querySelector(".app-footer");
+        if (footerElem) footerElem.style.display = "block";
 
         startFlow();
     }
