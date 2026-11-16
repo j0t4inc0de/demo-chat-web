@@ -1,0 +1,465 @@
+:root {
+    --primary: #C85A80;
+    --primary-dark: #7B2346;
+    --primary-light: #FDEEF3;
+    --bg-page: #f8fafc;
+    --bg-card: #ffffff;
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --border: #e2e8f0;
+    --success: #059669;
+    --success-light: #ecfdf5;
+    --warning: #d97706;
+    --warning-light: #fffbeb;
+    --font: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+    --shadow-md: 0 4px 14px rgba(0,0,0,0.06);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font);
+    background: var(--bg-page);
+    color: var(--text-main);
+    line-height: 1.5;
+}
+
+/* Topbar */
+.admin-topbar {
+    background: #ffffff;
+    border-bottom: 1px solid var(--border);
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    box-shadow: var(--shadow-sm);
+}
+
+.brand-badge {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-avatar-mini {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: var(--primary-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+}
+
+.brand-badge h1 {
+    font-size: 1.15rem;
+    font-weight: 800;
+}
+
+.user-role {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.live-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--success-light);
+    color: var(--success);
+    font-size: 0.76rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--success);
+    box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.2);
+}
+
+.period-badge {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    background: #f1f5f9;
+    padding: 6px 12px;
+    border-radius: 8px;
+}
+
+/* Container */
+.admin-container {
+    max-width: 1200px;
+    margin: 24px auto;
+    padding: 0 20px 40px;
+}
+
+/* Métricas */
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.metric-card {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px 20px;
+    box-shadow: var(--shadow-sm);
+}
+
+.metric-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.metric-title {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+.metric-value {
+    font-size: 1.7rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 4px;
+}
+
+.metric-trend {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.metric-trend.positive {
+    color: var(--success);
+}
+
+.metric-trend.highlight {
+    color: var(--primary);
+}
+
+/* Layout Principal Dividido */
+.main-content-split {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 20px;
+}
+
+.admin-panel {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: var(--shadow-sm);
+}
+
+.panel-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 14px;
+    gap: 12px;
+}
+
+.panel-header h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.panel-header .subtitle {
+    font-size: 0.84rem;
+    color: var(--text-muted);
+}
+
+.filter-pills {
+    display: flex;
+    gap: 6px;
+}
+
+.pill {
+    border: 1px solid var(--border);
+    background: #ffffff;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    color: var(--text-muted);
+}
+
+.pill.active {
+    background: var(--primary);
+    color: #ffffff;
+    border-color: var(--primary);
+}
+
+/* Listado de Citas */
+.appointments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.appointment-item {
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    transition: all 0.2s;
+    background: #ffffff;
+}
+
+.appointment-item:hover {
+    border-color: #cbd5e1;
+    box-shadow: var(--shadow-sm);
+}
+
+.appointment-item.today {
+    border-left: 5px solid var(--primary);
+}
+
+.appt-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.time-box {
+    text-align: center;
+    background: #f8fafc;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 8px 10px;
+    min-width: 70px;
+}
+
+.time-box .time {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: var(--text-main);
+}
+
+.time-box .date {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+.client-info h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.client-service {
+    font-size: 0.85rem;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.client-notes {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-top: 2px;
+    font-style: italic;
+}
+
+.appt-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.price-pill {
+    font-size: 0.88rem;
+    font-weight: 800;
+    color: var(--text-main);
+    background: #f1f5f9;
+    padding: 5px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+}
+
+.btn-icon-wa {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #25D366;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+    white-space: nowrap;
+}
+
+.btn-icon-wa:hover {
+    background: #1eb956;
+}
+
+/* Control de Disponibilidad */
+.help-text {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    background: #f8fafc;
+    border-left: 3px solid var(--primary);
+    padding: 10px 12px;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 16px;
+}
+
+.day-slot-control {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px;
+    margin-bottom: 12px;
+}
+
+.day-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.day-label {
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.status-pill {
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 12px;
+}
+
+.status-pill.open {
+    background: var(--success-light);
+    color: var(--success);
+}
+
+.status-pill.full {
+    background: var(--warning-light);
+    color: var(--warning);
+}
+
+.time-chips-toggle {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.chip {
+    border: 1.5px solid var(--border);
+    background: #ffffff;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.chip.active {
+    background: var(--primary-light);
+    border-color: var(--primary);
+    color: var(--primary-dark);
+}
+
+.chip.blocked {
+    background: #f1f5f9;
+    color: #94a3b8;
+    border-style: dashed;
+    text-decoration: line-through;
+}
+
+.chip.booked {
+    background: #fee2e2;
+    border-color: #fca5a5;
+    color: #991b1b;
+    cursor: not-allowed;
+}
+
+.btn-save-availability {
+    width: 100%;
+    background: var(--primary);
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 14px;
+    transition: background 0.2s;
+}
+
+.btn-save-availability:hover {
+    background: var(--primary-dark);
+}
+
+/* Responsividad */
+@media (max-width: 900px) {
+    .main-content-split {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .admin-topbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 12px 16px;
+    }
+    .admin-container {
+        padding: 0 12px 30px;
+    }
+    .appointment-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .appt-right {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
